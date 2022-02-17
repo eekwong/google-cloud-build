@@ -1,3 +1,5 @@
 steps:
+- name: 'bridgecrew/checkov'
+  args: [ '-f', 'main.tf' ]
 - name: 'hashicorp/terraform'
   args: [ 'apply', '-auto-approve' ]
