@@ -1,5 +1,7 @@
 steps:
+- name: 'alpine/git'
+  args: [ 'clone', 'https://github.com/bridgecrewio/terragoat.git', '/workspace/terragoat' ]
 - name: 'bridgecrew/checkov'
-  args: [ '-f', 'main.tf' ]
-- name: 'hashicorp/terraform'
-  args: [ 'apply', '-auto-approve' ]
+  args: [ '-d', '/workspace/terragoat/terraform/gcp' ]
+# - name: 'hashicorp/terraform'
+#   args: [ 'plan' ]
